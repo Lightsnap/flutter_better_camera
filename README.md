@@ -1,9 +1,12 @@
 # Better Camera Plugin
 (NOTE THIS IS A FORK OF THE OFFICIAL CAMERA PLUGIN, FEEL FREE TO USE THIS UNTILL IT SUPPORTS MISSING FEATURES, HERE THE OFFICIAL PLUGIN https://github.com/flutter/plugins)
 
-**(THIS IS QUITE UNSTABLE)**
+**(THIS IS QUITE UNSTABLE BUT WE ARE STARTING TO BE MORE ACTIVE DEVELOPING THIS PLUGIN)**
 
 A Flutter plugin for iOS and Android allowing access to the device cameras.
+
+## Dart package
+https://pub.flutter-io.cn/packages/flutter_better_camera
 
 ## Features:
 
@@ -40,8 +43,7 @@ Or in text format add the key:
 Change the minimum Android sdk version to 21 (or higher) in your `android/app/build.gradle` file.
 
 Modify your AndroidManifest.xml
-   
- 
+    
     <uses-permission android:name="android.permission.CAMERA" />    
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-feature android:name="android.hardware.camera" />
@@ -50,9 +52,18 @@ Modify your AndroidManifest.xml
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
     <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
 
-
 ```
 minSdkVersion 21
 ```
 
-There is a example for the camera in this repo
+There is aN example for the camera in this repo
+
+## NEXT UP:
+
+* Tap to focus
+* Burst mode
+* Control the camera preview ratio
+* Optimize the quality of images
+* Control White balance
+
+FEEL FREE TO ADD ISSUES AND PLEASE CONTRIBUTE
