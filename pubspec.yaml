@@ -1,4 +1,4 @@
-name: flutter_better_camera
+name: camera
 description: Flutter plugin for controlling the camera on Android and IOS, supports camera feed, capturing images, capturing videos, streaming image buffers and has support for all the essential features the camera APIs allow (flash, AE and more)
 version: 0.6.1
 
