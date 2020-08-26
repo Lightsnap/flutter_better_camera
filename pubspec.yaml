@@ -19,7 +19,7 @@ flutter:
     platforms:
       android:
         package: com.tudutu.plugins.flutterBetterCamera
-        pluginClass: FlutterBetterCameraPlugin
+        pluginClass: CameraPlugin
       ios:
         pluginClass: FlutterBetterCameraPlugin
 
