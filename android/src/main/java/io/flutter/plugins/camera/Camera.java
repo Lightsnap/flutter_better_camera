@@ -1111,4 +1111,12 @@ public class Camera {
             : (isFrontFacing) ? -currentOrientation : currentOrientation;
     return (sensorOrientationOffset + sensorOrientation + 360) % 360;
   }
+
+  public boolean hasFlash() {
+    final Boolean hasFlash = mCameraCharacteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+    if(hasFlash != null) {
+      return hasFlash;
+    }
+    return false;
+  }
 }

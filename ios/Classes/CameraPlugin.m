@@ -698,8 +698,7 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
   }
 }
 - (bool)hasFlash {
-  AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-  return ([device hasFlash] && [device hasFlash]);
+  return [_captureDevice hasFlash];
 }
 - (void)setFlashMode:(int)flashMode {
   [self setFlashMode:flashMode level:1.0];
