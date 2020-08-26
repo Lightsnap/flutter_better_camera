@@ -4,5 +4,5 @@
 
 #import <Flutter/Flutter.h>
 
-@interface FlutterBetterCameraPlugin : NSObject <FlutterBetterCameraPlugin>
+@interface FlutterBetterCameraPlugin : NSObject <FlutterPlugin>
 @end
