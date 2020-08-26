@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package com.tudutu.plugins.flutterBetterCamera;
+package com.tudutu.plugins.flutterbettercamera;
 
 import android.app.Activity;
 import android.os.Build;
@@ -13,14 +13,14 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
-import com.tudutu.plugins.flutterBetterCamera.CameraPermissions.PermissionsRegistry;
+import com.tudutu.plugins.flutterbettercamera.CameraPermissions.PermissionsRegistry;
 import io.flutter.view.TextureRegistry;
 
 /**
  * Platform implementation of the camera_plugin.
  *
  * <p>Instantiate this in an add to app scenario to gracefully handle activity and context changes.
- * See {@code com.tudutu.plugins.flutterBetterCamera.MainActivity} for an example.
+ * See {@code com.tudutu.plugins.flutterbettercamera.MainActivity} for an example.
  *
  * <p>Call {@link #registerWith(Registrar)} to register an implementation of this that uses the
  * stable {@code io.flutter.plugin.common} package.
@@ -34,7 +34,7 @@ public final class CameraPlugin implements FlutterPlugin, ActivityAware {
   /**
    * Initialize this within the {@code #configureFlutterEngine} of a Flutter activity or fragment.
    *
-   * <p>See {@code com.tudutu.plugins.flutterBetterCamera.MainActivity} for an example.
+   * <p>See {@code com.tudutu.plugins.flutterbettercamera.MainActivity} for an example.
    */
   public CameraPlugin() {}
 

@@ -1,4 +1,4 @@
-package com.tudutu.plugins.flutterBetterCamera;
+package com.tudutu.plugins.flutterbettercamera;
 
 import static junit.framework.TestCase.assertNull;
 import static org.junit.Assert.assertEquals;

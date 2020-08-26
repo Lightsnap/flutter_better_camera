@@ -1,4 +1,4 @@
-package com.tudutu.plugins.flutterBetterCamera;
+package com.tudutu.plugins.flutterbettercamera;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
@@ -12,7 +12,7 @@ import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.Result;
-import com.tudutu.plugins.flutterBetterCamera.CameraPermissions.PermissionsRegistry;
+import com.tudutu.plugins.flutterbettercamera.CameraPermissions.PermissionsRegistry;
 import io.flutter.view.TextureRegistry;
 
 final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {

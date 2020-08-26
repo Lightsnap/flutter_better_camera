@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
-import com.tudutu.plugins.flutterBetterCamera.CameraPlugin;
+import com.tudutu.plugins.flutterbettercamera.CameraPlugin;
 import io.flutter.plugins.pathprovider.PathProviderPlugin;
 import io.flutter.plugins.videoplayer.VideoPlayerPlugin;
 

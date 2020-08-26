@@ -1,4 +1,4 @@
-package com.tudutu.plugins.flutterBetterCamera;
+package com.tudutu.plugins.flutterbettercamera;
 
 public interface Constants {
 

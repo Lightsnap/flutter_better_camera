@@ -1,4 +1,4 @@
-package com.tudutu.plugins.flutterBetterCamera;
+package com.tudutu.plugins.flutterbettercamera;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.CamcorderProfile;
 import android.util.Size;
-import com.tudutu.plugins.flutterBetterCamera.Camera.ResolutionPreset;
+import com.tudutu.plugins.flutterbettercamera.Camera.ResolutionPreset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
