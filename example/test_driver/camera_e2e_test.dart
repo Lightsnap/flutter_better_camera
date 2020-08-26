@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter_driver/flutter_driver.dart';
 
-const String _examplePackage = 'io.flutter.plugins.cameraexample';
+const String _examplePackage = 'com.tudutu.plugins.flutterBetterCameraexample';
 
 Future<void> main() async {
   if (!(Platform.isLinux || Platform.isMacOS)) {

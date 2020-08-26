@@ -86,7 +86,7 @@ Add flash, auto exposure, zoom and auto focus support for IOS and Android
 ## 0.5.1
 
 * Can now be compiled with earlier Android sdks below 21 when
-`<uses-sdk tools:overrideLibrary="io.flutter.plugins.camera"/>` has been added to the project
+`<uses-sdk tools:overrideLibrary="com.tudutu.plugins.flutterBetterCamera"/>` has been added to the project
 `AndroidManifest.xml`. For sdks below 21, the plugin won't be registered and calls to it will throw
 a `MissingPluginException.`
 

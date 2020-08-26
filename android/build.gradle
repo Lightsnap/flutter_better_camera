@@ -1,4 +1,4 @@
-group 'io.flutter.plugins.camera'
+group 'com.tudutu.plugins.flutterBetterCamera'
 version '1.0-SNAPSHOT'
 
 buildscript {

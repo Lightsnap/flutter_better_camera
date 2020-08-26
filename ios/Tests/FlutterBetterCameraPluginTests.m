@@ -1,10 +1,10 @@
-@import camera;
+@import flutterBetterCamera;
 @import XCTest;
 
-@interface CameraPluginTests : XCTestCase
+@interface FlutterBetterCameraPluginTests : XCTestCase
 @end
 
-@implementation CameraPluginTests
+@implementation FlutterBetterCameraPluginTests
 
 - (void)testModuleImport {
   // This test will fail to compile if the module cannot be imported.

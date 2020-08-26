@@ -1,4 +1,4 @@
-package io.flutter.plugins.cameraexample;
+package com.tudutu.plugins.flutterBetterCameraexample;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
