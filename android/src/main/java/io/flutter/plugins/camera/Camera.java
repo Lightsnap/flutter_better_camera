@@ -1,6 +1,7 @@
 package io.flutter.plugins.camera;
 
 import static android.view.OrientationEventListener.ORIENTATION_UNKNOWN;
+import static io.flutter.plugins.camera.CameraUtils.computeBestCaptureSize;
 import static io.flutter.plugins.camera.CameraUtils.computeBestPreviewSize;
 
 import android.annotation.SuppressLint;
@@ -176,8 +177,14 @@ public class Camera {
 
     recordingProfile =
         CameraUtils.getBestAvailableCamcorderProfileForResolutionPreset(cameraName, preset);
-    captureSize = new Size(recordingProfile.videoFrameWidth, recordingProfile.videoFrameHeight);
-    previewSize = computeBestPreviewSize(cameraName, preset);
+
+
+    StreamConfigurationMap map = mCameraCharacteristics.get(
+            CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+    //TODO get the image best not the video
+    Size size = computeBestCaptureSize(map);
+    captureSize = size; // new Size(recordingProfile.videoFrameWidth, recordingProfile.videoFrameHeight);
+    previewSize = size; // computeBestPreviewSize(cameraName, preset);
   }
 
   private void setBestAERange(CameraCharacteristics characteristics) {
@@ -232,6 +239,7 @@ public class Camera {
     if (pictureImageReader != null) {
       pictureImageReader.close();
     }
+    //TODO make sure this is the biggest image
     pictureImageReader =
             ImageReader.newInstance(
                     captureSize.getWidth(), captureSize.getHeight(), ImageFormat.JPEG, 2);
@@ -533,6 +541,9 @@ public class Camera {
           cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
       captureBuilder.addTarget(pictureImageReader.getSurface());
 
+      //try increasing the quality of the image
+      captureBuilder.set(CaptureRequest.JPEG_QUALITY, (byte)90);
+
       captureBuilder.set(CaptureRequest.CONTROL_AF_MODE,
               mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AF_MODE));
 
@@ -565,6 +576,9 @@ public class Camera {
 
       captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, getMediaOrientation());
 
+
+      //TODOD should this be here
+      captureBuilder.set(CaptureRequest.SCALER_CROP_REGION, mPreviewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
 
       mCaptureSession.capture(
           captureBuilder.build(),
@@ -652,6 +666,11 @@ public class Camera {
               }
               mPreviewRequestBuilder.set(
                   CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+
+              //TODO set the request quality
+              mPreviewRequestBuilder.set(
+                      CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
+
               mCaptureSession.setRepeatingRequest(mPreviewRequestBuilder.build(), mCaptureCallback, null);
 
 
@@ -890,6 +909,8 @@ public class Camera {
   }
 
   public void startPreview() throws CameraAccessException {
+    if (pictureImageReader == null || pictureImageReader.getSurface() == null) return;
+
     createCaptureSession(CameraDevice.TEMPLATE_PREVIEW, pictureImageReader.getSurface());
   }
 

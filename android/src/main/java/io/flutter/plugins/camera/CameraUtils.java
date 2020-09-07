@@ -9,8 +9,9 @@ import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.CamcorderProfile;
+import android.util.Log;
 import android.util.Size;
-import io.flutter.plugins.camera.Camera.ResolutionPreset;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -18,6 +19,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import io.flutter.plugins.camera.Camera.ResolutionPreset;
 
 /** Provides various utilities for camera. */
 public final class CameraUtils {
@@ -36,10 +39,16 @@ public final class CameraUtils {
 
   static Size computeBestCaptureSize(StreamConfigurationMap streamConfigurationMap) {
     // For still image captures, we use the largest available size.
+
+    Size[] outputSizes = streamConfigurationMap.getOutputSizes(ImageFormat.JPEG);
+
+    //TODO think about aspect ratios
     return Collections.max(
-        Arrays.asList(streamConfigurationMap.getOutputSizes(ImageFormat.JPEG)),
+        Arrays.asList(outputSizes),
         new CompareSizesByArea());
   }
+
+
 
   public static List<Map<String, Object>> getAvailableCameras(Activity activity)
       throws CameraAccessException {
