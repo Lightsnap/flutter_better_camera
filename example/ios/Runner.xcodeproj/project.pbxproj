@@ -439,7 +439,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.flutter.plugins.cameraExampleTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tudutu.plugins.flutterBetterCameraExampleTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -461,7 +461,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.flutter.plugins.cameraExampleTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tudutu.plugins.flutterBetterCameraExampleTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

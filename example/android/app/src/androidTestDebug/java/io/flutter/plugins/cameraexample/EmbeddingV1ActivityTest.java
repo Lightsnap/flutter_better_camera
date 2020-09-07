@@ -1,4 +1,4 @@
-package io.flutter.plugins.cameraexample;
+package com.tudutu.plugins.flutterBetterCameraexample;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.e2e.FlutterRunner;

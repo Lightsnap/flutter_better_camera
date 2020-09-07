@@ -1,4 +1,4 @@
-package io.flutter.plugins.camera;
+package com.tudutu.plugins.flutterbettercamera;
 
 import android.text.TextUtils;
 import androidx.annotation.Nullable;
@@ -16,7 +16,7 @@ class DartMessenger {
   }
 
   DartMessenger(BinaryMessenger messenger, long eventChannelId) {
-    new EventChannel(messenger, "flutter.io/cameraPlugin/cameraEvents" + eventChannelId)
+    new EventChannel(messenger, "tudutu.com/flutterBetterCameraPlugin/cameraEvents" + eventChannelId)
         .setStreamHandler(
             new EventChannel.StreamHandler() {
               @Override

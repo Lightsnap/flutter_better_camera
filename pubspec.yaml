@@ -13,15 +13,15 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-homepage: https://github.com/Lightsnap/flutter-better-camera/
+homepage: https://github.com/tudutu/flutter-better-camera/
 flutter:
   plugin:
     platforms:
       android:
-        package: io.flutter.plugins.camera
+        package: com.tudutu.plugins.flutterbettercamera
         pluginClass: CameraPlugin
       ios:
-        pluginClass: CameraPlugin
+        pluginClass: FlutterBetterCameraPlugin
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "CameraPlugin.h"
+#import "FlutterBetterCameraPlugin.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Accelerate/Accelerate.h>
 #import <CoreMotion/CoreMotion.h>
@@ -675,7 +675,7 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
 - (void)startImageStreamWithMessenger:(NSObject<FlutterBinaryMessenger> *)messenger {
   if (!_isStreamingImages) {
     FlutterEventChannel *eventChannel =
-        [FlutterEventChannel eventChannelWithName:@"plugins.flutter.io/camera/imageStream"
+        [FlutterEventChannel eventChannelWithName:@"plugins.tudutu.com/flutterBetterCamera/imageStream"
                                   binaryMessenger:messenger];
 
     _imageStreamHandler = [[FLTImageStreamHandler alloc] init];
@@ -863,20 +863,20 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
 }
 @end
 
-@interface CameraPlugin ()
+@interface FlutterBetterCameraPlugin ()
 @property(readonly, nonatomic) NSObject<FlutterTextureRegistry> *registry;
 @property(readonly, nonatomic) NSObject<FlutterBinaryMessenger> *messenger;
 @property(readonly, nonatomic) FLTCam *camera;
 @end
 
-@implementation CameraPlugin {
+@implementation FlutterBetterCameraPlugin {
   dispatch_queue_t _dispatchQueue;
 }
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
   FlutterMethodChannel *channel =
-      [FlutterMethodChannel methodChannelWithName:@"plugins.flutter.io/camera"
+      [FlutterMethodChannel methodChannelWithName:@"plugins.tudutu.com/flutterBetterCamera"
                                   binaryMessenger:[registrar messenger]];
-  CameraPlugin *instance = [[CameraPlugin alloc] initWithRegistry:[registrar textures]
+  FlutterBetterCameraPlugin *instance = [[FlutterBetterCameraPlugin alloc] initWithRegistry:[registrar textures]
                                                         messenger:[registrar messenger]];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
@@ -892,7 +892,7 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
 
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
   if (_dispatchQueue == nil) {
-    _dispatchQueue = dispatch_queue_create("io.flutter.camera.dispatchqueue", NULL);
+    _dispatchQueue = dispatch_queue_create("com.tudutu.flutterBetterCamera.dispatchqueue", NULL);
   }
 	
   // Invoke the plugin on another dispatch queue to avoid blocking the UI.
@@ -960,7 +960,7 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
       };
       FlutterEventChannel *eventChannel = [FlutterEventChannel
           eventChannelWithName:[NSString
-                                   stringWithFormat:@"flutter.io/cameraPlugin/cameraEvents%lld",
+                                   stringWithFormat:@"tudutu.com/flutterBetterCameraPlugin/cameraEvents%lld",
                                                     textureId]
                binaryMessenger:_messenger];
       [eventChannel setStreamHandler:cam];

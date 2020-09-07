@@ -1,4 +1,4 @@
-package io.flutter.plugins.camera;
+package com.tudutu.plugins.flutterbettercamera;
 
 import android.Manifest;
 import android.Manifest.permission;
