@@ -1,4 +1,4 @@
-package io.flutter.plugins.camera;
+package app.lightsnap.flutter_better_camera;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.CamcorderProfile;
-import android.util.Log;
 import android.util.Size;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.flutter.plugins.camera.Camera.ResolutionPreset;
+import app.lightsnap.flutter_better_camera.Camera.ResolutionPreset;
 
 /** Provides various utilities for camera. */
 public final class CameraUtils {

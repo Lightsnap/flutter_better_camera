@@ -1,4 +1,4 @@
-package io.flutter.plugins.camera;
+package app.lightsnap.flutter_better_camera;
 
 public interface Constants {
 

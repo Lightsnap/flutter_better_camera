@@ -18,7 +18,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: io.flutter.plugins.camera
+        package: app.lightsnap.flutter_better_camera
         pluginClass: CameraPlugin
       ios:
         pluginClass: CameraPlugin

@@ -1,8 +1,8 @@
-name: camera_example
-description: Demonstrates how to use the camera plugin.
+name: flutter_better_camera_example
+description: Demonstrates how to use the flutter_better_camera plugin.
 
 dependencies:
-  camera:
+  flutter_better_camera:
     path: ../
   path_provider: ^0.5.0
   flutter:

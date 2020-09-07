@@ -1,8 +1,4 @@
-package io.flutter.plugins.camera;
-
-import static android.view.OrientationEventListener.ORIENTATION_UNKNOWN;
-import static io.flutter.plugins.camera.CameraUtils.computeBestCaptureSize;
-import static io.flutter.plugins.camera.CameraUtils.computeBestPreviewSize;
+package app.lightsnap.flutter_better_camera;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -32,10 +28,9 @@ import android.util.Range;
 import android.util.Size;
 import android.view.OrientationEventListener;
 import android.view.Surface;
+
 import androidx.annotation.NonNull;
-import io.flutter.plugin.common.EventChannel;
-import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.view.TextureRegistry.SurfaceTextureEntry;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -45,6 +40,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import io.flutter.plugin.common.EventChannel;
+import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.view.TextureRegistry.SurfaceTextureEntry;
+
+import static android.view.OrientationEventListener.ORIENTATION_UNKNOWN;
+import static app.lightsnap.flutter_better_camera.CameraUtils.computeBestCaptureSize;
+import static app.lightsnap.flutter_better_camera.CameraUtils.computeBestPreviewSize;
 
 public class Camera {
   /**

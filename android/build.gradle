@@ -1,4 +1,4 @@
-group 'io.flutter.plugins.camera'
+group 'app.lightsnap.flutter_better_camera'
 version '1.0-SNAPSHOT'
 
 buildscript {

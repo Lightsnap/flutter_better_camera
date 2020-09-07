@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="io.flutter.plugins.cameraexample">
+  package="app.lightsnap.flutter_better_camera_example">
 
   <application
     android:icon="@mipmap/ic_launcher"

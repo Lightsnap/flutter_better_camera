@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package io.flutter.plugins.camera;
+package app.lightsnap.flutter_better_camera;
 
 import android.app.Activity;
 import android.os.Build;
@@ -13,7 +13,7 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
-import io.flutter.plugins.camera.CameraPermissions.PermissionsRegistry;
+import app.lightsnap.flutter_better_camera.CameraPermissions.PermissionsRegistry;
 import io.flutter.view.TextureRegistry;
 
 /**
