@@ -312,7 +312,7 @@ class CameraController extends ValueNotifier<CameraValue> {
           'resolutionPreset': serializeResolutionPreset(resolutionPreset),
           'enableAudio': enableAudio,
           'autoFocusEnabled': autoFocusEnabled,
-          'enableAutoExposure': autoFocusEnabled,
+          'enableAutoExposure': enableAutoExposure,
           'flashMode': flashMode.index,
         },
       );
