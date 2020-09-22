@@ -88,17 +88,19 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
               child: Padding(
                 padding: const EdgeInsets.all(1.0),
                 child: Center(
-                    child: ZoomableWidget(
-                        child: _cameraPreviewWidget(),
-                        onTapUp: (scaledPoint) {
-                          //controller.setPointOfInterest(scaledPoint);
-                        },
-                        onZoom: (zoom) {
-                          print('zoom');
-                          if (zoom < 11) {
-                            controller.zoom(zoom);
-                          }
-                        })),
+                  child: ZoomableWidget(
+                    child: _cameraPreviewWidget(),
+                    onTapUp: (scaledPoint) {
+                      controller.setPointOfInterest(scaledPoint);
+                    },
+                    onZoom: (zoom) {
+                      print('zoom');
+                      if (zoom < 11) {
+                        controller.zoom(zoom);
+                      }
+                    },
+                  ),
+                ),
               ),
               decoration: BoxDecoration(
                 color: Colors.black,
@@ -623,8 +625,7 @@ class _ZoomableWidgetState extends State<ZoomableWidget> {
           final Offset localPoint = box.globalToLocal(det.globalPosition);
           final Offset scaledPoint =
               localPoint.scale(1 / box.size.width, 1 / box.size.height);
-          // TODO IMPLIMENT
-          // widget.onTapUp(scaledPoint);
+          widget.onTapUp(scaledPoint);
         },
         child: Stack(children: [
           Column(
