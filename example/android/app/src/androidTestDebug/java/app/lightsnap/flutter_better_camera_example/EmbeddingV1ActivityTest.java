@@ -1,4 +1,4 @@
-package io.flutter.plugins.cameraexample;
+package app.lightsnap.flutter_better_camera_example;
 
 import androidx.test.rule.ActivityTestRule;
 import dev.flutter.plugins.e2e.FlutterRunner;

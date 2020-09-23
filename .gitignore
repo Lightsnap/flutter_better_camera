@@ -34,6 +34,7 @@ jks/
 /build/
 build/
 example/build
+example/.flutter-plugins.dependancies
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -77,3 +78,12 @@ example/build
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+
+.flutter-plugins.dependancies
+.gradle/
+gen/
+gradle/
+gradlew
+gradlew.bat
+local.properties

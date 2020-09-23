@@ -1,4 +1,4 @@
-package io.flutter.plugins.camera;
+package app.lightsnap.flutter_better_camera;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
@@ -12,7 +12,7 @@ import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugins.camera.CameraPermissions.PermissionsRegistry;
+import app.lightsnap.flutter_better_camera.CameraPermissions.PermissionsRegistry;
 import io.flutter.view.TextureRegistry;
 
 final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {

@@ -1,3 +1,13 @@
+## 0.6.3
+Make quality of pictures in android better
+
+Rename library to flutter_better_camera so people can use camera library with this one
+## 0.6.2
+Fix minor android bug that camera was crashing
+
+## 0.6.1
+Fix bug that was making builds on iOS fields
+
 ## 0.6.0
 Add flash, auto exposure, zoom and auto focus support for IOS and Android
 

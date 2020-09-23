@@ -1,6 +1,7 @@
-package io.flutter.plugins.cameraexample;
+package app.lightsnap.flutter_better_camera_example;
 
 import android.os.Bundle;
+
 import io.flutter.app.FlutterActivity;
 import io.flutter.plugins.GeneratedPluginRegistrant;
 

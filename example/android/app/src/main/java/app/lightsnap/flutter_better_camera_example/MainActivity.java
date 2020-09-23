@@ -1,10 +1,11 @@
-package io.flutter.plugins.cameraexample;
+package app.lightsnap.flutter_better_camera_example;
 
 import androidx.annotation.NonNull;
+
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
-import io.flutter.plugins.camera.CameraPlugin;
+import app.lightsnap.flutter_better_camera.CameraPlugin;
 import io.flutter.plugins.pathprovider.PathProviderPlugin;
 import io.flutter.plugins.videoplayer.VideoPlayerPlugin;
 
