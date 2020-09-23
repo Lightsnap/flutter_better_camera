@@ -746,6 +746,20 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
     [_captureDevice unlockForConfiguration];
 }
 
+-(void) setPointOfInterest:(CGPoint)point {      
+    if ([_captureDevice isFocusPointOfInterestSupported]) {
+
+        NSError *error;
+
+        if ([_captureDevice lockForConfiguration:&error]) {       
+            [_captureDevice setFocusPointOfInterest:point];             
+            [_captureDevice setFocusMode:AVCaptureFocusModeAutoFocus];              
+            [_captureDevice unlockForConfiguration];                
+        } else {                
+            NSLog(@"Error in Focus Mode");
+        }        
+    }
+
 - (void)zoom:(double)zoom {
 
     NSError *error = nil;
@@ -997,6 +1011,11 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
     result(nil);
   } else if ([@"autoExposureOff" isEqualToString:call.method]) {
     [_camera setAutoExposureMode:false];
+  } else if([@"setPointOfInterest" isEqualToString:call.method]) {
+    NSNumber *dx = call.arguments[@"offsetX"];
+    NSNumber *dy = call.arguments[@"offsetY"];
+    CGPoint point = CGPointMake(dx.floatValue, dy.floatValue);
+    [_camera setPointOfInterest:point];
   } else if ([@"zoom" isEqualToString:call.method]){
       NSNumber *step = call.arguments[@"step"];
       [_camera zoom:[step doubleValue]];
