@@ -51,7 +51,7 @@ void main() {
       });
 
       test('getNumberOfCameras', () async {
-        final int result = await Camera.getNumberOfCameras();
+        final int? result = await Camera.getNumberOfCameras();
 
         expect(result, 3);
         expect(log, <Matcher>[
