@@ -31,7 +31,7 @@ final class CameraPermissions {
     }
     if (!hasCameraPermission(activity) || (enableAudio && !hasAudioPermission(activity))) {
       permissionsRegistry.addListener(
-          new CameraRequestPermissionsListener(
+          new OneTimeCameraRequestPermissionsListener(
               (String errorCode, String errorDescription) -> {
                 ongoing = false;
                 callback.onResult(errorCode, errorDescription);
@@ -59,29 +59,34 @@ final class CameraPermissions {
         == PackageManager.PERMISSION_GRANTED;
   }
 
-  private static class CameraRequestPermissionsListener
+  /// Handles a successful result only once. After that all calls to
+  /// onRequestPermissionsResult will return false.
+  private static class OneTimeCameraRequestPermissionsListener
       implements PluginRegistry.RequestPermissionsResultListener {
 
     final ResultCallback callback;
+    boolean active = true;
 
-    private CameraRequestPermissionsListener(ResultCallback callback) {
+    private OneTimeCameraRequestPermissionsListener(ResultCallback callback) {
       this.callback = callback;
     }
 
     @Override
     public boolean onRequestPermissionsResult(int id, String[] permissions, int[] grantResults) {
-      if (id == CAMERA_REQUEST_ID) {
-        if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-          callback.onResult("cameraPermission", "MediaRecorderCamera permission not granted");
-        } else if (grantResults.length > 1
-            && grantResults[1] != PackageManager.PERMISSION_GRANTED) {
-          callback.onResult("cameraPermission", "MediaRecorderAudio permission not granted");
-        } else {
-          callback.onResult(null, null);
-        }
-        return true;
+      if (!active || id != CAMERA_REQUEST_ID) {
+        return false;
       }
-      return false;
+
+      active = false;
+      if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+        callback.onResult("cameraPermission", "MediaRecorderCamera permission not granted");
+      } else if (grantResults.length > 1
+          && grantResults[1] != PackageManager.PERMISSION_GRANTED) {
+        callback.onResult("cameraPermission", "MediaRecorderAudio permission not granted");
+      } else {
+        callback.onResult(null, null);
+      }
+      return true;
     }
   }
 }
