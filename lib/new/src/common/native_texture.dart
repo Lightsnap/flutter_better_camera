@@ -29,10 +29,10 @@ class NativeTexture with CameraMappable {
   static Future<NativeTexture> allocate() async {
     final int handle = CameraChannel.nextHandle++;
 
-    final int textureId = await (CameraChannel.channel.invokeMethod<int>(
+    final int textureId = (await CameraChannel.channel.invokeMethod<int>(
       '$NativeTexture#allocate',
       <String, dynamic>{'textureHandle': handle},
-    ) as FutureOr<int>);
+    ))!;
 
     return NativeTexture._(handle: handle, textureId: textureId);
   }
