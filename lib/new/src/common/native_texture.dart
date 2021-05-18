@@ -4,8 +4,6 @@
 
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
-
 import 'camera_channel.dart';
 import 'camera_mixins.dart';
 
@@ -18,10 +16,8 @@ import 'camera_mixins.dart';
 ///
 /// The [textureId] can be passed to a [Texture] widget.
 class NativeTexture with CameraMappable {
-  NativeTexture._({@required int handle, @required this.textureId})
-      : _handle = handle,
-        assert(handle != null),
-        assert(textureId != null);
+  NativeTexture._({required int handle, required this.textureId})
+      : _handle = handle;
 
   final int _handle;
 
@@ -33,10 +29,10 @@ class NativeTexture with CameraMappable {
   static Future<NativeTexture> allocate() async {
     final int handle = CameraChannel.nextHandle++;
 
-    final int textureId = await CameraChannel.channel.invokeMethod<int>(
+    final int textureId = (await CameraChannel.channel.invokeMethod<int>(
       '$NativeTexture#allocate',
       <String, dynamic>{'textureHandle': handle},
-    );
+    ))!;
 
     return NativeTexture._(handle: handle, textureId: textureId);
   }

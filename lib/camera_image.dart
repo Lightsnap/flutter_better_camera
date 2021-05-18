@@ -17,25 +17,25 @@ class Plane {
         width = data['width'];
 
   /// Bytes representing this plane.
-  final Uint8List bytes;
+  final Uint8List? bytes;
 
   /// The distance between adjacent pixel samples on Android, in bytes.
   ///
   /// Will be `null` on iOS.
-  final int bytesPerPixel;
+  final int? bytesPerPixel;
 
   /// The row stride for this color plane, in bytes.
-  final int bytesPerRow;
+  final int? bytesPerRow;
 
   /// Height of the pixel buffer on iOS.
   ///
   /// Will be `null` on Android
-  final int height;
+  final int? height;
 
   /// Width of the pixel buffer on iOS.
   ///
   /// Will be `null` on Android.
-  final int width;
+  final int? width;
 }
 
 // TODO:(bmparr) Turn [ImageFormatGroup] to a class with int values.
@@ -130,13 +130,13 @@ class CameraImage {
   ///
   /// For formats where some color channels are subsampled, this is the height
   /// of the largest-resolution plane.
-  final int height;
+  final int? height;
 
   /// Width of the image in pixels.
   ///
   /// For formats where some color channels are subsampled, this is the width
   /// of the largest-resolution plane.
-  final int width;
+  final int? width;
 
   /// The pixels planes for this image.
   ///

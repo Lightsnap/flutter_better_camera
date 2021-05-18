@@ -34,29 +34,27 @@ class CameraController {
   /// cameras.
   ///
   /// This will choose the best [CameraConfigurator] for the current device.
-  factory CameraController({@required CameraDescription description}) {
+  factory CameraController({required CameraDescription description}) {
     return CameraController._(
       description: description,
-      configurator: _createDefaultConfigurator(description),
+      configurator: _createDefaultConfigurator(description)!,
       api: _getCameraApi(description),
     );
   }
 
   CameraController._({
-    @required this.description,
-    @required this.configurator,
-    @required this.api,
-  })  : assert(description != null),
-        assert(configurator != null),
-        assert(api != null);
+    required this.description,
+    required this.configurator,
+    required this.api,
+  });
 
   /// Constructor for defining your own [CameraConfigurator].
   ///
   /// Use [CameraController.availableCameras] to get a list of available
   /// cameras.
   factory CameraController.customConfigurator({
-    @required CameraDescription description,
-    @required CameraConfigurator configurator,
+    required CameraDescription description,
+    required CameraConfigurator configurator,
   }) {
     return CameraController._(
       description: description,
@@ -69,7 +67,7 @@ class CameraController {
   static const String _isDisposedMessage = 'This controller has been disposed.';
 
   // Keep only one active instance of CameraController.
-  static CameraController _instance;
+  static CameraController? _instance;
 
   bool _isDisposed = false;
 
@@ -107,7 +105,7 @@ class CameraController {
     final Completer<void> completer = Completer<void>();
 
     if (_instance != null) {
-      _instance
+      _instance!
           .dispose()
           .then((_) => configurator.initialize())
           .then((_) => completer.complete());
@@ -140,7 +138,7 @@ class CameraController {
     return configurator.dispose();
   }
 
-  static CameraConfigurator _createDefaultConfigurator(
+  static CameraConfigurator? _createDefaultConfigurator(
     CameraDescription description,
   ) {
     final CameraApi api = _getCameraApi(description);
