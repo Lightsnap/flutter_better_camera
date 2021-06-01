@@ -34,6 +34,7 @@ jks/
 /build/
 build/
 example/build
+example/.flutter-plugins-dependencies
 
 # Android related
 **/android/**/gradle-wrapper.jar
