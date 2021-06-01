@@ -1,3 +1,6 @@
+## 1.0.1
+Fixed an issue with devices that do not have flash, thanks to [roxifas](https://github.com/roxifas) ❤️
+
 ## 1.0.0
 Null safety support.
 
