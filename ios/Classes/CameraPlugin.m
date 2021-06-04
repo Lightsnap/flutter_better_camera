@@ -706,7 +706,7 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
 }
 - (void)setFlashMode:(int)flashMode {
     if (!_captureDevice.hasFlash) {
-        [self setFlashMode: AVCaptureFlashModeOff]
+        [self setFlashMode: AVCaptureFlashModeOff];
     } else {
         [self setFlashMode:flashMode level:1.0];
     }
