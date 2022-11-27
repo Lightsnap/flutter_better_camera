@@ -1,3 +1,6 @@
+## 1.0.3
+Asynchronously set the stream handler to prevent a crash on iOS. Thanks to [driverZhan](https://github.com/driverZhan) ❤️ 
+
 ## 1.0.2
 iPad specific bugfix for devices that do not have flash.
 
