@@ -970,7 +970,9 @@ FourCharCode const videoFormat = kCVPixelFormatType_32BGRA;
                                    stringWithFormat:@"flutter.io/cameraPlugin/cameraEvents%lld",
                                                     textureId]
                binaryMessenger:_messenger];
-      [eventChannel setStreamHandler:cam];
+      dispatch_async(dispatch_get_main_queue(), ^{
+        [eventChannel setStreamHandler:cam];
+      });
       cam.eventChannel = eventChannel;
       result(@{
         @"textureId" : @(textureId),
